@@ -2,10 +2,9 @@ import React,{useState} from 'react'
 import style from './AddNotice.module.css';
 import {useForm} from 'react-hook-form'
 import {useNavigate} from 'react-router-dom';
-import Calendar from 'react-calendar';
 
 export default function NoticePopup({open}) {
-    const{register,handleSubmit} =useForm();
+    const{register,handleSubmit} = useForm();
     const navigate = useNavigate();
     const onSubmit =(data)=>{
         try{ 
@@ -30,7 +29,7 @@ export default function NoticePopup({open}) {
              }
          })
              .then((response) => {
-                 if(response.status == 401) navigate('/login');
+                 if(response.status === 401) navigate('/login');
                  return response.json();
              })
              .then((Data) =>{
@@ -56,7 +55,7 @@ export default function NoticePopup({open}) {
     <div className={style.overlay}>
             <h1>Add Notice</h1> <button onClick={validate}>Validate Ref No </button>
             <form id='addNotice' className={style.form} onSubmit={handleSubmit(onSubmit)}>
-            <label>Reference No : </label>
+            <label>Reference No  : </label>
             <input type="text" {...register("RefNo")} placeholder="RefNo" required></input>
             <label>{isUnique}</label>
             <br/>
@@ -73,8 +72,7 @@ export default function NoticePopup({open}) {
             <label> Issuer Designation : </label>
             <input type="text" {...register("IssuerDesignation")} placeholder="Issuer  Designation" required></input><br/>
             <label>Posted By : </label>
-            <input type="text" {...register("PostedBy")} placeholder="Posted  By" required></input><br/>
-            
+            <input type="text" {...register("PostedBy")} placeholder="Posted  By" required></input><br/>        
             <button className={style.btn}>Add Entry </button>
         </form>
 

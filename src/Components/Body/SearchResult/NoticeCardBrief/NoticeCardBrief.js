@@ -1,14 +1,17 @@
 import React,{useState} from 'react'
 import style from './NoticeCardBrief.module.css';
-
+import ShowNotice from '../../../NoticeOperations/ShowNotice';
 export default function NoticeCardBrief(props) {
 
   const [details, setDetails] = useState([]);
+  const [openMOdel, SetOpenModel] = useState(false);
   const showDetails = (event)=>{
-    console.log("showing details ");
+   
     let   url = `/api/notice/Search?RefNo=${event.target.value}`;
-    loadNotices(url);
-    console.log(details);
+    loadNotices(url); 
+    if(details.length !== 0){
+         SetOpenModel(true);
+    }
   }
 
   function loadNotices(url){
@@ -25,6 +28,7 @@ export default function NoticeCardBrief(props) {
   
   return (
     <div className={style.noticeCardBrief}>
+        <ShowNotice open={openMOdel} onClose={() =>SetOpenModel(false)} details={details} />
         <div className={style.date}>
         &nbsp;{props.info.IssueDate.substring(0,10)}&nbsp;
         </div>

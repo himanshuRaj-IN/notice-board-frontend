@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import AddNotice from '../NoticeOperations/AddNotice';
 import DeleteNotice from '../NoticeOperations/DeleteNotice';
+import style from './Admin.module.css';
 export default function AdminBody() {
   const [openModel, SetOpenModel] = useState(false);
   const [openModel2, SetOpenModel2] = useState(false);
@@ -19,11 +20,10 @@ export default function AdminBody() {
     SetOpenModel2(true);
   }
   return (
-    <div>
+    <div className={style.adminBody}>
       
-        <button onClick={addNotice}> Add New Notice </button>
-        <button onClick={editNotice}> Edit Existing Notice </button>
-        <button onClick={deleteNotice}> Delete Notice </button>
+        <button className={style.btn} onClick={addNotice}> Add New Notice </button>
+        <button className={style.btn} onClick={deleteNotice}> Delete Notice </button>
         <AddNotice open={openModel} onClose={() =>SetOpenModel(false)} />
         <DeleteNotice open={openModel2} onClose={() =>SetOpenModel2(false)} />
 

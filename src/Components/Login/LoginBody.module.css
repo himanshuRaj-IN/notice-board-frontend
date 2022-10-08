@@ -11,4 +11,23 @@
 .loginBody::-webkit-scrollbar {
     display: none;
   }
-  
+input[type=password]{
+    width: 15rem;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    border-color: var(--com-01-bg);
+}
+input[type=text]{
+    width: 15rem;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    border-color: var(--com-01-bg);
+}
+.btn{
+    margin-top: 1rem;
+    width: 15rem;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    font-weight: bold;
+    border-color: var(--com-01-bg);
+}

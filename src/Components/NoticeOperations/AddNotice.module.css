@@ -6,14 +6,17 @@ height: 90vh;
     overflow: scroll;
     border-radius: 1em;
     background-color: var(--bg-body);
-    text-align: center;
+    text-align: left;
+    font-weight: bolder;
   }
   
-  .modelContainer {
-    
-  }
-  .closeBtn {
-    float: right;
-    margin-right: 1rem;
-    
-  }
+.btn{
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 8px;
+  background:var(--com-01-bg);
+  font-weight: bolder;
+}
+.btn:hover{
+  cursor: pointer;
+}
